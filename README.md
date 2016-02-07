@@ -94,7 +94,7 @@ FROM rogerignazio/waylon:v2.1.4
 MAINTAINER You <you@example.com>
 
 ADD myconfig.yaml /usr/local/waylon/config/waylon.yml
-CMD bundle exec foreman start
+CMD bundle exec foreman start -f Procfile.docker
 ```
 
 ### Marathon (Mesos / DCOS)
