@@ -75,7 +75,17 @@ views:
 ### Docker
 The easiest way to deploy Waylon is by using the
 [rogerignazio/waylon](https://hub.docker.com/r/rogerignazio/waylon) Docker
-image, setting the `$WAYLON_CONFIG` environment variable to a URL containing a
+image:
+
+```
+$ docker run    \
+  -p 8080:8080  \
+  -v /path/to/my/waylon.yml:/usr/local/waylon/config/waylon.yml \
+  rogerignazio/waylon:v2.1.4 \
+  bundle exec foreman start -f Procfile.docker
+```
+
+Or by setting the `$WAYLON_CONFIG` environment variable to a URL containing a
 `waylon.yml` configuration file, like so:
 
 ```
